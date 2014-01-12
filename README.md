@@ -1,5 +1,4 @@
-
-# Koindashian [KOIN, ¤]
+# Koindashian [KOIN, Ҟ]
 ![Koindashian](http://koindashian.com/images/splash2.png)
 
 http://koindashian.com/
