@@ -2119,7 +2119,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.GetHash() = %s\n", block.GetHash().ToString().c_str());
         printf("hashGenesisBlock = %s\n", hashGenesisBlock.ToString().c_str());
         printf("block.hashMerkleRoot = %s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x"));
+        assert(block.hashMerkleRoot == uint256("0xc0127a4e888382251a510984287b679bb3cbdae81427bf5735de4ac47d5c64d9"));
 
 if (true && block.GetHash() != hashGenesisBlock)
         {
