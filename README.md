@@ -84,7 +84,7 @@ Special reward system: Random block rewards
     make -f makefile.unix USE_UPNP=1 USE_IPV6=1 USE_QRCODE=1
 
 ### ports
-RPC 22555
-P2P 22556
+RPC 13370
+P2P 1337
 
 ![](http://Koindashian.com)
