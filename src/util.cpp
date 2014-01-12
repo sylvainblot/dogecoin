@@ -937,7 +937,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "dogecoin";
+    const char* pszModule = "koindashian";
 #endif
     if (pex)
         return strprintf(
@@ -976,7 +976,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Koindashian
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Koindashian
     // Mac: ~/Library/Application Support/Koindashian
-    // Unix: ~/.dogecoin
+    // Unix: ~/.koindashian
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Koindashian";
@@ -994,7 +994,7 @@ boost::filesystem::path GetDefaultDataDir()
     return pathRet / "Koindashian";
 #else
     // Unix
-    return pathRet / ".dogecoin";
+    return pathRet / ".koindashian";
 #endif
 #endif
 }
@@ -1036,7 +1036,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "dogecoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "koindashian.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1053,7 +1053,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override dogecoin.conf
+        // Don't overwrite existing settings so command line settings override koindashian.conf
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -1067,7 +1067,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "dogecoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "koindashiand.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

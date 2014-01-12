@@ -82,6 +82,6 @@ cp *.h miniupnpc/
 Dogecoin
 -------
 DOS prompt:
-cd \dogecoin\src
+cd \koindashian\src
 mingw32-make -f makefile.mingw
-strip dogecoind.exe
+strip koindashiand.exe

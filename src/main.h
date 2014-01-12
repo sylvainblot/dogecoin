@@ -540,7 +540,7 @@ public:
     {
         // Large (in bytes) low-priority (new, small-coin) transactions
         // need a fee.
-        return dPriority > 100 * COIN * 1440 / 250; // Koindashian: 1440 blocks found a day. Priority cutoff is 100 dogecoin day / 250 bytes.
+        return dPriority > 100 * COIN * 1440 / 250; // Koindashian: 1440 blocks found a day. Priority cutoff is 100 koindashian day / 250 bytes.
     }
 
     int64 GetMinFee(unsigned int nBlockSize=1, bool fAllowFree=true, enum GetMinFee_mode mode=GMF_BLOCK) const

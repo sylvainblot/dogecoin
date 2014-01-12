@@ -124,7 +124,7 @@ bool AppInit(int argc, char* argv[])
         //
         // Parameters
         //
-        // If Qt is used, parameters/dogecoin.conf are parsed in qt/bitcoin.cpp's main()
+        // If Qt is used, parameters/koindashian.conf are parsed in qt/bitcoin.cpp's main()
         ParseParameters(argc, argv);
         if (!boost::filesystem::is_directory(GetDataDir(false)))
         {
@@ -135,13 +135,13 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specific to dogecoind / RPC client
+            // First part of help message is specific to koindashiand / RPC client
             std::string strUsage = _("Koindashian version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  dogecoind [options]                     " + "\n" +
-                  "  dogecoind [options] <command> [params]  " + _("Send command to -server or dogecoind") + "\n" +
-                  "  dogecoind [options] help                " + _("List commands") + "\n" +
-                  "  dogecoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  koindashiand [options]                     " + "\n" +
+                  "  koindashiand [options] <command> [params]  " + _("Send command to -server or koindashiand") + "\n" +
+                  "  koindashiand [options] help                " + _("List commands") + "\n" +
+                  "  koindashiand [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -151,7 +151,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "dogecoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "koindashian:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
 {
     bool fRet = false;
 
-    // Connect dogecoind signal handlers
+    // Connect koindashiand signal handlers
     noui_connect();
 
     fRet = AppInit(argc, argv);
@@ -218,8 +218,8 @@ bool static Bind(const CService &addr, bool fError = true) {
 std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: dogecoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: dogecoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: koindashian.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: koindashiand.pid)") + "\n" +
         "  -gen                   " + _("Generate coins") + "\n" +
         "  -gen=0                 " + _("Don't generate coins") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
@@ -294,7 +294,7 @@ std::string HelpMessage()
     return strUsage;
 }
 
-/** Initialize dogecoin.
+/** Initialize koindashian.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2()
@@ -588,7 +588,7 @@ bool AppInit2()
         strErrors << _("Error loading blkindex.dat") << "\n";
 
     // as LoadBlockIndex can take several minutes, it's possible the user
-    // requested to kill dogecoin-qt during the last operation. If so, exit.
+    // requested to kill koindashian-qt during the last operation. If so, exit.
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)
     {
