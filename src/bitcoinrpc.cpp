@@ -2001,7 +2001,7 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "Koindashian is not connected!");
+        throw JSONRPCError(-9, "Koindashian is not connected!!");
 
     if (IsInitialBlockDownload())
         throw JSONRPCError(-10, "Koindashian is downloading blocks...");
