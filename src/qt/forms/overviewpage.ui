@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#OverviewPage{
+background-image: url(:/images/res/images/overview_bg.png);
+color: white;
+}
+</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -202,32 +209,32 @@
        </property>
       </spacer>
      </item>
-	 <item>
-         <widget class="QLabel" name="label_wallet_bgcoin">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../bitcoin.qrc">:/images/wallet_bgcoin</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="margin">
-           <number>-2</number>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
+     <item>
+      <widget class="QLabel" name="label_wallet_bgcoin">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../bitcoin.qrc">:/images/wallet_bgcoin</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="margin">
+        <number>-2</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -320,6 +327,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../bitcoin.qrc"/>
+ </resources>
  <connections/>
 </ui>
