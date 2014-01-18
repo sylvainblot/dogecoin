@@ -25,7 +25,7 @@ public:
 
     void setModel(WalletModel *model);
     void showOutOfSyncWarning(bool fShow);
-
+    void paintEvent(QPaintEvent *);
 public slots:
     void setBalance(qint64 balance, qint64 unconfirmedBalance, qint64 immatureBalance);
     void setNumTransactions(int count);

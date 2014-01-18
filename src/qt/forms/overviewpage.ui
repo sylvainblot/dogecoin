@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>573</width>
-    <height>342</height>
+    <width>590</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,9 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#OverviewPage{
-background-image: url(:/images/res/images/overview_bg.png);
+background-image: url(:/images/overview_bg);
+}
+QWidget{
 color: white;
 }
 </string>

@@ -99,7 +99,6 @@ OverviewPage::OverviewPage(QWidget *parent) :
     filter(0)
 {
     ui->setupUi(this);
-
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
     ui->listTransactions->setIconSize(QSize(DECORATION_SIZE, DECORATION_SIZE));
@@ -121,7 +120,13 @@ void OverviewPage::handleTransactionClicked(const QModelIndex &index)
     if(filter)
         emit transactionClicked(filter->mapToSource(index));
 }
-
+void OverviewPage::paintEvent(QPaintEvent *)
+ {
+     QStyleOption opt;
+     opt.init(this);
+     QPainter p(this);
+     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+ }
 OverviewPage::~OverviewPage()
 {
     delete ui;
